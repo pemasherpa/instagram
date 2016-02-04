@@ -11,18 +11,22 @@ import AFNetworking
 
 class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var instagram: [NSDictionary]?
     
-    @IBOutlet weak var photoTableView: UITableView!
-    
-    
     override func viewDidLoad() {
+        self.tableView.registerClass(photoTableViewCell.self, forCellReuseIdentifier: "photoTableViewCell")
+        
+        
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
        
-        photoTableView.delegate = self
-        photoTableView.dataSource = self
-        photoTableView.rowHeight = 320
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 320
         
         let clientId = "e05c462ebd86446ea48a5af73769b602"
         let url = NSURL(string:"https://api.instagram.com/v1/media/popular?client_id=\(clientId)")
@@ -41,10 +45,10 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                             NSLog("response: \(responseDictionary)")
                             self.instagram = responseDictionary["data"] as? [NSDictionary]
                             
-                            self.photoTableView.reloadData()
+                            self.tableView.reloadData()
                     }
                 }
-        })
+        });
         task.resume()
         
     }
@@ -64,16 +68,15 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = photoTableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! photoCell
-    
-        let photo = instagram![indexPath.row]
-        let photoUrl = photo.valueForKeyPath("images.low_resolution.url") as? String
+        let cell = tableView.dequeueReusableCellWithIdentifier("photoTableViewCell", forIndexPath: indexPath) as! photoTableViewCell
+
+        let photo = instagram![indexPath.section]
+        let images = (photo["images"] as! NSDictionary)["standard_resolution"] as! NSDictionary
+        let photoUrl = NSURL(string: images["url"] as! String)
         
-        cell.pictureView.setImageWithURL(NSURL(string: photoUrl!)!)
+        cell.pictureView.setImageWithURL(photoUrl!)
         
         return cell
     }
- 
-
 }
 

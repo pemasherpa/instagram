@@ -13,7 +13,7 @@
 		BF25C6411C5F45540060132E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF25C63F1C5F45540060132E /* Main.storyboard */; };
 		BF25C6431C5F45540060132E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF25C6421C5F45540060132E /* Assets.xcassets */; };
 		BF25C6461C5F45540060132E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF25C6441C5F45540060132E /* LaunchScreen.storyboard */; };
-		BFFB3DEA1C5F554200FE8C6A /* photoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB3DE91C5F554200FE8C6A /* photoCell.swift */; };
+		BF594D621C62C54D00CA9A15 /* photoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF594D611C62C54D00CA9A15 /* photoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,7 @@
 		BF25C6421C5F45540060132E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF25C6451C5F45540060132E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF25C6471C5F45540060132E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFFB3DE91C5F554200FE8C6A /* photoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoCell.swift; sourceTree = "<group>"; };
+		BF594D611C62C54D00CA9A15 /* photoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoTableViewCell.swift; sourceTree = "<group>"; };
 		E951A86A227F1688D187B156 /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +83,7 @@
 				BF25C63B1C5F45540060132E /* AppDelegate.swift */,
 				BF25C63D1C5F45540060132E /* PhotosViewController.swift */,
 				BF25C63F1C5F45540060132E /* Main.storyboard */,
-				BFFB3DE91C5F554200FE8C6A /* photoCell.swift */,
+				BF594D611C62C54D00CA9A15 /* photoTableViewCell.swift */,
 				BF25C6421C5F45540060132E /* Assets.xcassets */,
 				BF25C6441C5F45540060132E /* LaunchScreen.storyboard */,
 				BF25C6471C5F45540060132E /* Info.plist */,
@@ -213,9 +213,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF594D621C62C54D00CA9A15 /* photoTableViewCell.swift in Sources */,
 				BF25C63E1C5F45540060132E /* PhotosViewController.swift in Sources */,
 				BF25C63C1C5F45540060132E /* AppDelegate.swift in Sources */,
-				BFFB3DEA1C5F554200FE8C6A /* photoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
